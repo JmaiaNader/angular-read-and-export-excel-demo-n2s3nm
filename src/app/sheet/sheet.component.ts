@@ -42,20 +42,32 @@ export class SheetComponent implements OnInit {
     reader.readAsBinaryString(target.files[0]);
   }
 
-onClickold() {
+submit() {
+  let list=[];
     for (var k = 1; k < this.data.length; k++) {
       let element = this.data[k];
+      let test =this.data[k-1];
       let mapPerfermanceValue = new Map<any, any>();
-      let i = 0;
-      for (const [key, value] of Object.entries(element)) {
-        let head = key;
-        mapPerfermanceValue.set(head, value);
-        i++;
-      }
-      this.people.set(element[1], mapPerfermanceValue);
+      
+    if(element[2]==!test[2]){
+      list=[];
+      list.push(element[1]);
+     
+      this.people.set(element[2], list);
+
+    }
+    else {
+       list.push(element[1]);
+     
+      this.people.set(element[2], list);
+      
+    }
+     
+      
+     
     }
 
-    console.log()
+    console.log(this.people);
   }
   export(): void {
     /* generate worksheet */
