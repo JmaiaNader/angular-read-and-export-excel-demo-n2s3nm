@@ -49,17 +49,17 @@ submit() {
       let test =this.data[k-1];
       let mapPerfermanceValue = new Map<any, any>();
       
-    if(element[2]==!test[2]){
+    if(element[1]==!test[1]){
       list=[];
-      list.push(element[1]);
+      list.push(element[0]);
      
-      this.people.set(element[2], list);
+      this.people.set(element[1], list);
 
     }
     else {
-       list.push(element[1]);
+       list.push(element[0]);
      
-      this.people.set(element[2], list);
+      this.people.set(element[1], list);
       
     }
      
